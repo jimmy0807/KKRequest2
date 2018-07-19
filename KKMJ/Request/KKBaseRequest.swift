@@ -8,7 +8,6 @@
 
 import Foundation
 import Alamofire
-import RxSwift
 
 //enum APIRequestError: Error
 //{
