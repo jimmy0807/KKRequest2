@@ -63,14 +63,14 @@ open class KKRequestManager: NSObject
         return self
     }
     
-    @discardableResult public func setTimeOut(_ timeout : TimeInterval) -> KKRequestManager
+    @discardableResult open func setTimeOut(_ timeout : TimeInterval) -> KKRequestManager
     {
         self.timeout = timeout
         
         return self
     }
     
-    @discardableResult public func setDecoder(_ decoder : KKBaseDecoder<Any>) -> KKRequestManager
+    @discardableResult open func setDecoder(_ decoder : KKBaseDecoder<Any>) -> KKRequestManager
     {
         self.decoder = decoder
         

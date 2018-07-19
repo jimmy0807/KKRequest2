@@ -17,8 +17,8 @@ public enum KKInterceptorResultEnum
 
 open class KKBaseInterceptorResult: NSObject
 {
-    var code = 0;
-    var nextStep = KKInterceptorResultEnum.NextSuccess
-    var message = ""
-    var data : Any?
+    open var code = 0;
+    open var nextStep = KKInterceptorResultEnum.NextSuccess
+    open var message = ""
+    open var data : Any?
 }
