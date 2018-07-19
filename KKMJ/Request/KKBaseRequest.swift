@@ -30,12 +30,7 @@ open class KKBaseRequest<U : Any,V : Any> : NSObject
     var completeClosure : CompleteClosure?
     var requestParameters : Parameters = [:]
     var headParameters : Parameters = [:]
-    
-    override init()
-    {
-        super.init()
-    }
-    
+
     @discardableResult
     open func execute() -> KKBaseRequest
     {

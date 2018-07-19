@@ -20,19 +20,19 @@ open class KKRequestManager: NSObject
     public var interceptor : KKBaseInterceptor<Any>?
     public var requestMethod = KKRequestMethod.POSTBODY
     
-    class func shared() -> KKRequestManager
+    open class func shared() -> KKRequestManager
     {
         return instance
     }
     
-    @discardableResult func add(_ request : Request) -> KKRequestManager
+    @discardableResult open func add(_ request : Request) -> KKRequestManager
     {
         requestArray.append(request)
         
         return self
     }
     
-    @discardableResult func remove(_ request : Request) -> KKRequestManager
+    @discardableResult open func remove(_ request : Request) -> KKRequestManager
     {
         if let index = requestArray.index(where: { $0 === request })
         {
@@ -42,35 +42,35 @@ open class KKRequestManager: NSObject
         return self
     }
     
-    @discardableResult func setRequestMethod(_ method : KKRequestMethod) -> KKRequestManager
+    @discardableResult open func setRequestMethod(_ method : KKRequestMethod) -> KKRequestManager
     {
         requestMethod = method
         
         return self
     }
     
-    @discardableResult func setInterceptor(_ interceptor : KKBaseInterceptor<Any>) -> KKRequestManager
+    @discardableResult open func setInterceptor(_ interceptor : KKBaseInterceptor<Any>) -> KKRequestManager
     {
         self.interceptor = interceptor
 
         return self
     }
     
-    @discardableResult func setBaseUrl(_ url : String) -> KKRequestManager
+    @discardableResult open func setBaseUrl(_ url : String) -> KKRequestManager
     {
         baseUrl = url
         
         return self
     }
     
-    @discardableResult func setTimeOut(_ timeout : TimeInterval) -> KKRequestManager
+    @discardableResult public func setTimeOut(_ timeout : TimeInterval) -> KKRequestManager
     {
         self.timeout = timeout
         
         return self
     }
     
-    @discardableResult func setDecoder(_ decoder : KKBaseDecoder<Any>) -> KKRequestManager
+    @discardableResult public func setDecoder(_ decoder : KKBaseDecoder<Any>) -> KKRequestManager
     {
         self.decoder = decoder
         
