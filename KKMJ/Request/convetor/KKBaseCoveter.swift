@@ -10,7 +10,7 @@ import UIKit
 
 open class KKBaseCoveter<U,V>
 {
-    func onReceieve(_ object : U) -> V?
+    open func onReceieve(_ object : U) -> V?
     {
         fatalError("请实现KKBaseCoveter的onReceieve")
     }

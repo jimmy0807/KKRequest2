@@ -20,10 +20,10 @@ import Alamofire
 
 open class KKBaseRequest<U : Any,V : Any> : NSObject
 {
-    typealias SuccessClosure = (_ data: V) -> Void
-    typealias FailedClosure = (_ error: KKRequestError) -> Void
-    typealias CompleteClosure = (_ isSend: Bool) -> Void
-    typealias Parameters = [String: String]
+    public typealias SuccessClosure = (_ data: V) -> Void
+    public typealias FailedClosure = (_ error: KKRequestError) -> Void
+    public typealias CompleteClosure = (_ isSend: Bool) -> Void
+    public typealias Parameters = [String: String]
     
     var successClosure : SuccessClosure?
     var failedClosure : FailedClosure?
@@ -43,7 +43,7 @@ open class KKBaseRequest<U : Any,V : Any> : NSObject
     }
     
     @discardableResult
-    func execute(_ successClosure : SuccessClosure?) -> KKBaseRequest
+    open func execute(_ successClosure : SuccessClosure?) -> KKBaseRequest
     {
         self.successClosure = successClosure
         
@@ -194,57 +194,57 @@ open class KKBaseRequest<U : Any,V : Any> : NSObject
         }
     }
     
-    func willStart() -> Bool
+    open func willStart() -> Bool
     {
         return true
     }
     
-    func getBaseUrl() -> String
+    open func getBaseUrl() -> String
     {
         return KKRequestManager.shared().baseUrl;
     }
     
-    func getRequestMethod() -> HTTPMethod
+    open func getRequestMethod() -> HTTPMethod
     {
         return .get;
     }
     
-    func getSubUrl() -> String
+    open func getSubUrl() -> String
     {
         return ""
     }
     
-    func getParameters() -> Parameters
+    open func getParameters() -> Parameters
     {
         return requestParameters
     }
     
-    func getHeaders() -> Parameters
+    open func getHeaders() -> Parameters
     {
         return headParameters
     }
     
-    func getInterceptor() -> KKBaseInterceptor<Any>?
+    open func getInterceptor() -> KKBaseInterceptor<Any>?
     {
         return KKRequestManager.shared().interceptor
     }
     
-    func getDecoder() -> KKBaseDecoder<Any>?
+    open func getDecoder() -> KKBaseDecoder<Any>?
     {
         return KKRequestManager.shared().decoder
     }
     
-    func getConveter() -> KKBaseCoveter<Any, Any>?
+    open func getConveter() -> KKBaseCoveter<Any, Any>?
     {
         return nil
     }
     
-    func mockData() -> V?
+    open func mockData() -> V?
     {
         return nil;
     }
     
-    func onReceieve(_ data : U) -> V?
+    open func onReceieve(_ data : U) -> V?
     {
         if let value = data as? V
         {
@@ -263,21 +263,21 @@ open class KKBaseRequest<U : Any,V : Any> : NSObject
 //block
 extension KKBaseRequest
 {
-    @discardableResult func onSuccess(_ closure : @escaping SuccessClosure) -> KKBaseRequest
+    @discardableResult open func onSuccess(_ closure : @escaping SuccessClosure) -> KKBaseRequest
     {
         self.successClosure = closure
         
         return self
     }
     
-    @discardableResult func onFailed(_ closure : @escaping FailedClosure) -> KKBaseRequest
+    @discardableResult open func onFailed(_ closure : @escaping FailedClosure) -> KKBaseRequest
     {
         self.failedClosure = closure
         
         return self
     }
     
-    @discardableResult func onComplete(_ closure : @escaping CompleteClosure) -> KKBaseRequest
+    @discardableResult open func onComplete(_ closure : @escaping CompleteClosure) -> KKBaseRequest
     {
         self.completeClosure = closure
         

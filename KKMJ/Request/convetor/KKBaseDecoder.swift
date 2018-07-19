@@ -10,5 +10,5 @@ import UIKit
 
 open class KKBaseDecoder<T>
 {
-    func decode(value : Data) -> T? { fatalError("请实现KKBaseDecoder的decode") }
+    open func decode(value : Data) -> T? { fatalError("请实现KKBaseDecoder的decode") }
 }

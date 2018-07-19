@@ -12,7 +12,7 @@ import SwiftyJSON
 open class KKJsonDecoder<T> : KKBaseDecoder<T>
 {
     override
-    func decode(value: Data) -> T?
+    open func decode(value: Data) -> T?
     {
         return JSON(value) as? T
     }

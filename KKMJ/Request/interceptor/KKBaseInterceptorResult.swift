@@ -8,14 +8,14 @@
 
 import UIKit
 
-enum KKInterceptorResultEnum
+public enum KKInterceptorResultEnum
 {
     case NextSuccess
     case NextFailed
     case NextComplete
 }
 
-class KKBaseInterceptorResult: NSObject
+open class KKBaseInterceptorResult: NSObject
 {
     var code = 0;
     var nextStep = KKInterceptorResultEnum.NextSuccess

@@ -8,13 +8,13 @@
 
 import UIKit
 
-enum APIRequestError : Int
+public enum APIRequestError : Int
 {
     case convert = 2000
     case server = 2001
 }
 
-struct KKRequestError
+public struct KKRequestError
 {
     var code = 0
     var message = ""

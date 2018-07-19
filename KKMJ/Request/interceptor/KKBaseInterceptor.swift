@@ -10,9 +10,9 @@ import UIKit
 
 open class KKBaseInterceptor<T> : NSObject
 {
-    func willStart() -> Bool { return true }
-    func willExecute() -> Bool { return true }
-    func onReceieve(object : T) -> KKBaseInterceptorResult? { return nil }
-    func onError() -> KKBaseInterceptorResult? { return nil }
-    func getHeaders() -> [String : String]? { return [:] }
+    open func willStart() -> Bool { return true }
+    open func willExecute() -> Bool { return true }
+    open func onReceieve(object : T) -> KKBaseInterceptorResult? { return nil }
+    open func onError() -> KKBaseInterceptorResult? { return nil }
+    open func getHeaders() -> [String : String]? { return [:] }
 }

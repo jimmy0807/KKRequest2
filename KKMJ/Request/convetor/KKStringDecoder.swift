@@ -11,7 +11,7 @@ import UIKit
 open class KKStringDecoder : KKBaseDecoder<String>
 {
     override
-    func decode(value: Data) -> String?
+    open func decode(value: Data) -> String?
     {
         return String(data: value, encoding: .utf8)
     }
