@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum KKRequestMethod
+public enum KKRequestMethod
 {
     case GET
     case POSTQUERY

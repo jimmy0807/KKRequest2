@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class KKRequestManager: NSObject
+open class KKRequestManager: NSObject
 {
     var requestArray = [Request]()
     

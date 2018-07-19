@@ -8,7 +8,7 @@
 
 import UIKit
 
-class KKBaseInterceptor<T> : NSObject
+open class KKBaseInterceptor<T> : NSObject
 {
     func willStart() -> Bool { return true }
     func willExecute() -> Bool { return true }

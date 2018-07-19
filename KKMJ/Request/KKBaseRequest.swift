@@ -18,7 +18,7 @@ import Alamofire
 //    case invalidWithMessage(String)
 //}
 
-class KKBaseRequest<U : Any,V : Any> : NSObject
+open class KKBaseRequest<U : Any,V : Any> : NSObject
 {
     typealias SuccessClosure = (_ data: V) -> Void
     typealias FailedClosure = (_ error: KKRequestError) -> Void
@@ -43,7 +43,7 @@ class KKBaseRequest<U : Any,V : Any> : NSObject
     }
     
     @discardableResult
-    open func execute(_ successClosure : SuccessClosure?) -> KKBaseRequest
+    func execute(_ successClosure : SuccessClosure?) -> KKBaseRequest
     {
         self.successClosure = successClosure
         
@@ -263,21 +263,21 @@ class KKBaseRequest<U : Any,V : Any> : NSObject
 //block
 extension KKBaseRequest
 {
-    @discardableResult open func onSuccess(_ closure : @escaping SuccessClosure) -> KKBaseRequest
+    @discardableResult func onSuccess(_ closure : @escaping SuccessClosure) -> KKBaseRequest
     {
         self.successClosure = closure
         
         return self
     }
     
-    @discardableResult open func onFailed(_ closure : @escaping FailedClosure) -> KKBaseRequest
+    @discardableResult func onFailed(_ closure : @escaping FailedClosure) -> KKBaseRequest
     {
         self.failedClosure = closure
         
         return self
     }
     
-    @discardableResult open func onComplete(_ closure : @escaping CompleteClosure) -> KKBaseRequest
+    @discardableResult func onComplete(_ closure : @escaping CompleteClosure) -> KKBaseRequest
     {
         self.completeClosure = closure
         

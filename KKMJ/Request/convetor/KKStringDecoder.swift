@@ -8,7 +8,7 @@
 
 import UIKit
 
-class KKStringDecoder : KKBaseDecoder<String>
+open class KKStringDecoder : KKBaseDecoder<String>
 {
     override
     func decode(value: Data) -> String?
