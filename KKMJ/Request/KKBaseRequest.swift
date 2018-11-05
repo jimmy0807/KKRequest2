@@ -225,12 +225,12 @@ open class KKBaseRequest<U : Any,V : Any> : NSObject
         return headParameters
     }
     
-    open func getInterceptor() -> KKBaseInterceptor<Any>?
+    open func getInterceptor() -> KKBaseInterceptor?
     {
         return KKRequestManager.shared().interceptor
     }
     
-    open func getDecoder() -> KKBaseDecoder<Any>?
+    open func getDecoder() -> KKBaseDecoder?
     {
         return KKRequestManager.shared().decoder
     }

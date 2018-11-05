@@ -8,10 +8,10 @@
 
 import UIKit
 
-open class KKStringDecoder : KKBaseDecoder<String>
+open class KKStringDecoder : KKBaseDecoder
 {
     override
-    open func decode(value: Data) -> String?
+    open func decode(value: Data) -> Any?
     {
         return String(data: value, encoding: .utf8)
     }

@@ -16,8 +16,8 @@ open class KKRequestManager: NSObject
     static let instance = KKRequestManager()
     public var baseUrl = ""
     public var timeout = TimeInterval(60)
-    public var decoder : KKBaseDecoder<Any> = KKJsonDecoder()
-    public var interceptor : KKBaseInterceptor<Any>?
+    public var decoder : KKBaseDecoder = KKJsonDecoder()
+    public var interceptor : KKBaseInterceptor?
     public var requestMethod = KKRequestMethod.POSTBODY
     
     open class func shared() -> KKRequestManager
@@ -49,7 +49,7 @@ open class KKRequestManager: NSObject
         return self
     }
     
-    @discardableResult open func setInterceptor(_ interceptor : KKBaseInterceptor<Any>) -> KKRequestManager
+    @discardableResult open func setInterceptor(_ interceptor : KKBaseInterceptor) -> KKRequestManager
     {
         self.interceptor = interceptor
 
@@ -70,7 +70,7 @@ open class KKRequestManager: NSObject
         return self
     }
     
-    @discardableResult open func setDecoder(_ decoder : KKBaseDecoder<Any>) -> KKRequestManager
+    @discardableResult open func setDecoder(_ decoder : KKBaseDecoder) -> KKRequestManager
     {
         self.decoder = decoder
         

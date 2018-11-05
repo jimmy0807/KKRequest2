@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class KKBaseDecoder<T> : NSObject
+open class KKBaseDecoder : NSObject
 {
-    open func decode(value : Data) -> T? { fatalError("请实现KKBaseDecoder的decode") }
+    open func decode(value : Data) -> Any? { fatalError("请实现KKBaseDecoder的decode") }
 }

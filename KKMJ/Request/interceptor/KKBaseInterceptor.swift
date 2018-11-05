@@ -8,11 +8,11 @@
 
 import UIKit
 
-open class KKBaseInterceptor<T> : NSObject
+open class KKBaseInterceptor : NSObject
 {
     open func willStart() -> Bool { return true }
     open func willExecute() -> Bool { return true }
-    open func onReceieve(object : T) -> KKBaseInterceptorResult? { return nil }
+    open func onReceieve(object : Any) -> KKBaseInterceptorResult? { return nil }
     open func onError() -> KKBaseInterceptorResult? { return nil }
     open func getHeaders() -> [String : String]? { return nil }
     open func getParameters() -> [String: String]? {return nil }
