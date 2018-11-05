@@ -14,5 +14,6 @@ open class KKBaseInterceptor<T> : NSObject
     open func willExecute() -> Bool { return true }
     open func onReceieve(object : T) -> KKBaseInterceptorResult? { return nil }
     open func onError() -> KKBaseInterceptorResult? { return nil }
-    open func getHeaders() -> [String : String]? { return [:] }
+    open func getHeaders() -> [String : String]? { return nil }
+    open func getParameters() -> [String: String]? {return nil }
 }

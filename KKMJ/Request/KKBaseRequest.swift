@@ -67,6 +67,12 @@ open class KKBaseRequest<U : Any,V : Any> : NSObject
                 headParameters = getHeaders()
                 headParameters.merge(heads) { (current, _) -> String in current }
             }
+            
+            if let params = interceptor.getHeaders()
+            {
+                requestParameters = getParameters()
+                requestParameters.merge(params) { (current, _) -> String in current }
+            }
         }
         
 #if DEBUG
@@ -91,7 +97,7 @@ open class KKBaseRequest<U : Any,V : Any> : NSObject
         Alamofire.SessionManager.default.session.configuration.requestCachePolicy = .reloadIgnoringLocalCacheData
         Alamofire.SessionManager.default.session.configuration.timeoutIntervalForRequest = KKRequestManager.shared().timeout
         
-        let request = Alamofire.request(getBaseUrl() + getSubUrl(), method: getRequestMethod(), parameters:getParameters(), headers: headParameters)
+        let request = Alamofire.request(getBaseUrl() + getSubUrl(), method: getRequestMethod(), parameters:requestParameters, headers: headParameters)
        
         KKRequestManager.shared().add(request)
         

@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class KKBaseCoveter<U,V>
+open class KKBaseCoveter<U,V> : NSObject
 {
     open func onReceieve(_ object : U) -> V?
     {
