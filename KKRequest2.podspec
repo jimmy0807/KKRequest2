@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
   Testing Private Podspec.
                    DESC
 
-  s.homepage     = "https://github.com/jimmy808126/KKRequest2"
+  s.homepage     = "https://github.com/jimmy0807/KKRequest2"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -80,7 +80,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/jimmy808126/KKRequest2.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/jimmy0807/KKRequest2.git", :tag => "#{s.version}" }
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
