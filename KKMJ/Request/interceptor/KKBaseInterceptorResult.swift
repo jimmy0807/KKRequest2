@@ -15,10 +15,16 @@ public enum KKInterceptorResultEnum
     case NextComplete
 }
 
-open class KKBaseInterceptorResult: NSObject
+open class KKBaseInterceptorResult<T>: NSObject
 {
     open var code = 0;
     open var nextStep = KKInterceptorResultEnum.NextSuccess
     open var message = ""
     open var data : Any?
+}
+
+open class KKBaseInterceptorErrorResult: NSObject
+{
+    open var code = 0;
+    open var message = ""
 }

@@ -126,7 +126,7 @@ open class KKBaseRequest<U : Any,V : Any> : NSObject
         {
             if let interceptor = self.getInterceptor()
             {
-                if let result = interceptor.onReceieve(object: object)
+                if let result : KKBaseInterceptorResult<U> = interceptor.onReceieve(object: object)
                 {
                     if result.nextStep == .NextFailed
                     {
